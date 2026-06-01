@@ -10,14 +10,16 @@
 
 # 3. Translate each sub-problem into pseudocode:
 # counter = 0
-# FOR EACH time IN race_times:
-#     IF time < threshold:
+# for each time in race_times:
+#     if time < threshold:
 #         counter = counter + 1
 # RETURN counter
 
 ### I - Implement
 # 4. Translate the pseudocode into Python and share your final answer:
 
+# I chose this problem because it is a common type of problem that can be solved with a simple loop and conditional
+#  statement. It also allows for practice with counting and comparing values.
 def count_less_than(race_times, threshold):
     count = 0
     for time in race_times:
@@ -44,14 +46,16 @@ print(count_less_than(race_times, threshold))
 # If any quantity is odd, return False immediately. If all are even, return True.
 
 # 3. Translate each sub-problem into pseudocode:
-# FOR EACH quantity IN item_quantities:
-#     IF quantity % 2 != 0:
+# for each quantity in item_quantities:
+#     if quantity modulo 2 != 0:
 #         RETURN False
 # RETURN True
 
 ### I - Implement
 # 4. Translate the pseudocode into Python and share your final answer:
 
+# I chose this problem because it allows for practice with the modulo operator and handling 
+# edge cases like an empty list.
 def can_pair(item_quantities):
     for quant in item_quantities:
         if quant % 2 != 0:
@@ -79,14 +83,15 @@ print(can_pair(item_quantities))
 
 # 3. Translate each sub-problem into pseudocode:
 # indexes = []
-# FOR EACH index, item IN enumerate(items):
+# for each index, item in items:
 #     IF item == "thistle":
-#         indexes.append(index)
+#         append index
 # RETURN indexes
 
 ### I - Implement
 # 4. Translate the pseudocode into Python and share your final answer:
 
+# I chose this problem because it allows for practice with loops, conditionals, and working with list appending.
 def locate_thistles(items):
     indexes = []
     for index, item in enumerate(items):
