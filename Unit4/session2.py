@@ -21,7 +21,7 @@
 # maxT = ''
 # max = 0
 # for expense, value in expense_summary.items():
-#     if value greater than max:
+#     if value greater than max: #
 #         maxT = expense
 # return (expense_summary, maxT)
 
