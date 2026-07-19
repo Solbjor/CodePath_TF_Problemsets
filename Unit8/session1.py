@@ -148,19 +148,59 @@ oak2 = TreeNode(
 print(count_leaves(oak1))
 print(count_leaves(oak2))
 
-# Problem : 
+# Problem 6: Survey the Tree
+
 ### U - Understand
 # 1. Share 2 questions you would ask to help understand the question:
-#  
+# In what order should the nodes be visited?
+# What should the function return if the tree is empty?
 
 ### P - Plan
 # 2. Write out in plain English what you want to do:
-# 
+# I want to recursively visit every node in the tree using preorder traversal.
+# I will first add the current node's value, then survey the left subtree,
+# and finally survey the right subtree.
 
 # 3. Translate each sub-problem into pseudocode:
-# 
+# If root is None:
+#     Return an empty list
+#
+# Create a list containing the root's value
+# Recursively survey the left subtree
+# Recursively survey the right subtree
+# Return the root value followed by the left and right subtree values
 
 ### I - Implement
 # 4. Translate the pseudocode into Python and share your final answer:
-# 
 
+class TreeNode:
+    def __init__(self, value, left=None, right=None):
+        self.val = value
+        self.left = left
+        self.right = right
+
+def survey_tree(root):
+    if root is None:
+        return []
+
+    return (
+        [root.val]
+        + survey_tree(root.left)
+        + survey_tree(root.right)
+    )
+
+"""
+        Root
+      /      \
+    Node1    Node2
+  /         /    \
+Leaf1    Leaf2  Leaf3
+"""
+
+magnolia = TreeNode(
+    "Root",
+    TreeNode("Node1", TreeNode("Leaf1")),
+    TreeNode("Node2", TreeNode("Leaf2"), TreeNode("Leaf3"))
+)
+
+print(survey_tree(magnolia))

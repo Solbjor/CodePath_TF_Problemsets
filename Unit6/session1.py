@@ -8,10 +8,12 @@
 # 2. Write out in plain English what you want to do:
 # I would use two pointers that move at different speeds through the linked list.
 # When the fast pointer reaches the end, the slow pointer will be at the middle.
+
 # 3. Translate each sub-problem into pseudocode:
 # Set slow and fast to the head of the list.
 # Move slow one step and fast two steps while fast can keep moving.
 # Return the value at slow when fast reaches the end.
+
 ### I - Implement
 # 4. Translate the pseudocode into Python and share your final answer:
 # I chose this problem because it helped me practice the fast and slow pointer pattern.
@@ -44,11 +46,13 @@ print(find_middle_element(Node(1, Node(2, Node(3, Node(4, Node(5)))))))
 # 2. Write out in plain English what you want to do:
 # I would use two pointers to detect whether the linked list has a cycle.
 # If they meet, I would move one pointer back to the head and advance both one step at a time to find the start of the loop.
+
 # 3. Translate each sub-problem into pseudocode:
 # Move slow by one step and fast by two steps until they meet or the list ends.
 # If they meet, set one pointer to the head.
 # Move both pointers one step at a time until they meet again.
 # Return the value of the meeting node.
+
 ### I - Implement
 # 4. Translate the pseudocode into Python and share your final answer:
 # I chose this problem because it showed how to find the start of a cycle in a linked list.
@@ -86,10 +90,12 @@ def get_loop_start(head):
 # 2. Write out in plain English what you want to do:
 # I would walk through the list and reverse each pointer as I go.
 # I would keep track of the previous node, the current node, and the next node so I do not lose the rest of the list.
+
 # 3. Translate each sub-problem into pseudocode:
 # Start with previous as None and current as the head.
 # Save the next node, reverse the current pointer, and move both pointers forward.
 # Return the previous node as the new head.
+
 ### I - Implement
 # 4. Translate the pseudocode into Python and share your final answer:
 # I chose this problem because reversing a linked list is a classic interview question.
