@@ -172,32 +172,50 @@ collection = build_tree(values)
 # Using print_tree() function at the top of page
 print_tree(add_plant(collection, "Aloe"))
 
-# Problem 5: Sorting Plants by Rarity 
+# Problem 5: Sorting Plants by Rarity
+
 ### U - Understand
 # 1. Share 2 questions you would ask to help understand the question:
-# 
+# Should the plants be returned from lowest rarity to highest rarity?
+# Should the function return the plant names, rarity values, or both?
 
 ### P - Plan
 # 2. Write out in plain English what you want to do:
-# 
+# I want to traverse the binary search tree in inorder.
+# Because the tree is organized by rarity, visiting the left subtree first,
+# then the current node, and then the right subtree will return the plants
+# from lowest rarity to highest rarity.
 
 # 3. Translate each sub-problem into pseudocode:
-# 
+# If collection is None:
+#     Return an empty list
+#
+# Recursively sort the plants in the left subtree
+# Add the current plant's name to the list
+# Recursively sort the plants in the right subtree
+# Return the combined list
 
 ### I - Implement
 # 4. Translate the pseudocode into Python and share your final answer:
-# 
 
 class TreeNode:
     def __init__(self, key, value, left=None, right=None):
-        self.key = key      # Plant rarity
+        self.key = key        # Plant rarity
         self.val = value      # Plant name
         self.left = left
         self.right = right
 
 
 def sort_plants(collection):
-    pass
+    if collection is None:
+        return []
+
+    return (
+        sort_plants(collection.left)
+        + [collection.val]
+        + sort_plants(collection.right)
+    )
+
 
 """
          (3, "Monstera")
@@ -208,7 +226,15 @@ def sort_plants(collection):
 """
 
 # Using build_tree() function at the top of page
-values = [(3, "Monstera"), (1, "Pothos"), (5, "Witchcraft Orchid"), None, (2, "Spider Plant"), (4, "Hoya Motoskei")]
+values = [
+    (3, "Monstera"),
+    (1, "Pothos"),
+    (5, "Witchcraft Orchid"),
+    None,
+    (2, "Spider Plant"),
+    (4, "Hoya Motoskei")
+]
+
 collection = build_tree(values)
 
 print(sort_plants(collection))
